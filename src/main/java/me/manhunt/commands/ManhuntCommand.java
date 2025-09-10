@@ -1,5 +1,8 @@
 package me.manhunt.commands;
 
+import me.manhunt.collections.GuiCollection;
+import me.manhunt.gui.GuiInventory;
+import me.manhunt.gui.enums.GuiInventoryType;
 import me.manhunt.singletons.Messages;
 import me.manhunt.singletons.TextMaker;
 import org.bukkit.ChatColor;
@@ -16,7 +19,9 @@ public class ManhuntCommand extends CustomCommand {
 
     @Override
     protected boolean runPlayerCommand(Player player, String[] args) {
-        player.sendMessage("Works");
+        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.TEST_INVENTORY, player);
+
+        player.openInventory(gui.getInventory());
 
         return false;
     }
