@@ -1,0 +1,13 @@
+me\manhunt\singletons\Messages.class
+me\manhunt\singletons\TextMaker.class
+me\manhunt\singletons\TextMaker$Builder.class
+me\manhunt\files\FileManager.class
+me\manhunt\commands\CommandCollection.class
+me\manhunt\singletons\TextMaker$Builder$TextData.class
+me\manhunt\singletons\ExceptionHandler.class
+me\manhunt\singletons\SoundPlayer.class
+me\manhunt\src\Manhunt.class
+me\manhunt\commands\ManhuntCommand.class
+me\manhunt\listeners\GenericManhuntListener.class
+me\manhunt\commands\CustomCommand.class
+me\manhunt\commands\CustomSubCommand.class
