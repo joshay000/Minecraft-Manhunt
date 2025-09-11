@@ -1,5 +1,9 @@
 package me.manhunt.gui.enums;
 
 public enum GuiItemType {
-    TEST_ITEM
+    PAGINATION_FIRST_PAGE,
+    PAGINATION_LAST_PAGE,
+    PAGINATION_NEXT_PAGE,
+    PAGINATION_PREVIOUS_PAGE,
+    PAGINATION_CURRENT_PAGE
 }

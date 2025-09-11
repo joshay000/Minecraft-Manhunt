@@ -7,6 +7,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Objects;
 
 public abstract class GuiItem implements GuiItemBase {
+    protected final GuiInventory inventory;
+
+    public GuiItem(GuiInventory inventory) {
+        this.inventory = inventory;
+    }
+
     @Override
     public ItemStack getItemStack() {
         ItemStack output = new ItemStack(getMaterial());
@@ -21,5 +27,9 @@ public abstract class GuiItem implements GuiItemBase {
         output.setItemMeta(meta);
 
         return output;
+    }
+
+    public GuiInventory getInventory() {
+        return inventory;
     }
 }

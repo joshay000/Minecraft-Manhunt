@@ -1,11 +1,17 @@
+me\manhunt\gui\items\pagination\NextPageItem.class
 me\manhunt\gui\GuiItemBase.class
+me\manhunt\gui\items\pagination\FirstPageItem.class
 me\manhunt\singletons\TextMaker.class
 me\manhunt\commands\CommandCollection.class
+me\manhunt\gui\items\pagination\RandomPageableItem.class
 me\manhunt\singletons\ExceptionHandler.class
 me\manhunt\gui\inventories\TestInventory.class
+me\manhunt\gui\GuiPageable.class
+me\manhunt\gui\GuiInventoryPaginationBase.class
 me\manhunt\commands\ManhuntCommand.class
+me\manhunt\gui\items\pagination\LastPageItem.class
+me\manhunt\gui\items\pagination\PreviousPageItem.class
 me\manhunt\listeners\GenericManhuntListener.class
-me\manhunt\gui\items\TestItem.class
 me\manhunt\gui\enums\GuiItemType.class
 me\manhunt\commands\CustomSubCommand.class
 me\manhunt\gui\enums\GuiInventoryType.class
@@ -13,6 +19,7 @@ me\manhunt\gui\GuiInventory.class
 me\manhunt\gui\factories\GuiFactory.class
 me\manhunt\gui\GuiInventoryBase.class
 me\manhunt\singletons\Messages.class
+me\manhunt\gui\items\pagination\CurrentPageItem.class
 me\manhunt\singletons\TextMaker$Builder.class
 me\manhunt\files\FileManager.class
 me\manhunt\singletons\TextMaker$Builder$TextData.class

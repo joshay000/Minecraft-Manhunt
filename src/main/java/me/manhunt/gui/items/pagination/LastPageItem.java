@@ -1,5 +1,6 @@
-package me.manhunt.gui.items;
+package me.manhunt.gui.items.pagination;
 
+import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -8,30 +9,33 @@ import org.bukkit.entity.Player;
 import java.awt.*;
 import java.util.List;
 
-public class TestItem extends GuiItem {
+public class LastPageItem extends GuiItem {
+    public LastPageItem(GuiInventory inventory) {
+        super(inventory);
+    }
+
     @Override
     public Material getMaterial() {
-        return Material.WITHER_ROSE;
+        return Material.STONE_BUTTON;
     }
 
     @Override
     public String getName() {
-        return "Epic";
+        return ChatColor.GOLD + "Last Page";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("This was achieved through much blood, sweat, and tears.", "Treat it well...");
+        return null;
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(4, 1);
+        return new Point(7, 4);
     }
 
     @Override
     public void click(Player player) {
-        player.sendMessage(ChatColor.GOLD + "It works!");
-        player.closeInventory();
+        inventory.lastPage();
     }
 }
