@@ -37,5 +37,7 @@ public class PreviousPageItem extends GuiItem {
     @Override
     public void click(Player player) {
         inventory.previousPage();
+
+        playClick();
     }
 }

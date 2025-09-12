@@ -28,11 +28,11 @@ public class SoundPlayer {
         play(Sound.UI_BUTTON_CLICK, 1.0f, 1.0f, players);
     }
 
-    public void playSettingsUpdates(List<Player> players) {
-        playSettingsUpdates(listToArray(players));
+    public void playSettingsUpdate(List<Player> players) {
+        playSettingsUpdate(listToArray(players));
     }
 
-    public void playSettingsUpdates(Player...players) {
+    public void playSettingsUpdate(Player...players) {
         play(Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f, players);
     }
 

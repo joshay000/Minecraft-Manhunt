@@ -37,5 +37,7 @@ public class FirstPageItem extends GuiItem {
     @Override
     public void click(Player player) {
         inventory.firstPage();
+
+        playClick();
     }
 }

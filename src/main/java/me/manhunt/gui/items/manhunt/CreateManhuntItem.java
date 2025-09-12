@@ -1,47 +1,43 @@
-package me.manhunt.gui.items.pagination;
+package me.manhunt.gui.items.manhunt;
 
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
-import me.manhunt.gui.GuiPageable;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.awt.*;
 import java.util.List;
 
-public class RandomPageableItem extends GuiItem implements GuiPageable {
-    private int x;
-    private int y;
-
-    public RandomPageableItem(GuiInventory inventory, int x, int y) {
+public class CreateManhuntItem extends GuiItem {
+    public CreateManhuntItem(GuiInventory inventory) {
         super(inventory);
-
-        this.x = x;
-        this.y = y;
     }
 
     @Override
     public Material getMaterial() {
-        return Material.GRASS_BLOCK;
+        return Material.CRAFTING_TABLE;
     }
 
     @Override
     public String getName() {
-        return "Item " + (x + y * 9);
+        return ChatColor.AQUA + "Create New Manhunt";
     }
 
     @Override
     public List<String> getLore() {
-        return null;
+        return List.of(
+                ChatColor.WHITE + "Create a new manhunt game."
+        );
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(x, y);
+        return new Point(4, 2);
     }
 
     @Override
     public void click(Player player) {
-        player.closeInventory();
+        playClick();
     }
 }

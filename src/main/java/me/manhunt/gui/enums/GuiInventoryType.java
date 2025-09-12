@@ -1,5 +1,5 @@
 package me.manhunt.gui.enums;
 
 public enum GuiInventoryType {
-    TEST_INVENTORY
+    MANHUNT_INVENTORY
 }

@@ -37,5 +37,7 @@ public class LastPageItem extends GuiItem {
     @Override
     public void click(Player player) {
         inventory.lastPage();
+
+        playClick();
     }
 }

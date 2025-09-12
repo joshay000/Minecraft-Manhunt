@@ -19,7 +19,7 @@ public class ManhuntCommand extends CustomCommand {
 
     @Override
     protected boolean runPlayerCommand(Player player, String[] args) {
-        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.TEST_INVENTORY, player);
+        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.MANHUNT_INVENTORY, player);
 
         player.openInventory(gui.getInventory());
 
