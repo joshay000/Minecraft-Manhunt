@@ -75,6 +75,10 @@ public class ManhuntPreGameCollection {
         return false;
     }
 
+    public boolean isPlayerWithinPreGame(Player player) {
+        return isPlayerInGame(player) || isPlayerLeadingGame(player) || doesPlayerHaveInvite(player);
+    }
+
     public ManhuntPreGame getPlayerGame(Player player) {
         for (ManhuntPreGame game : games)
             if (game.containsPlayer(player))
@@ -97,5 +101,19 @@ public class ManhuntPreGameCollection {
                 return game;
 
         return null;
+    }
+
+    public ManhuntPreGame getGameFromPlayer(Player player) {
+        ManhuntPreGame output = getPlayerGame(player);
+
+        if (output != null)
+            return output;
+
+        output = getPlayerGameLeading(player);
+
+        if (output != null)
+            return output;
+
+        return getPlayerGameInvited(player);
     }
 }

@@ -1,10 +1,14 @@
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\collections\GuiCollection.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\collections\ManhuntPreGameCollection.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\commands\CommandCollection.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\commands\CustomCommand.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\commands\CustomSubCommand.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\commands\ManhuntCommand.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\events\ManhuntGuiItemClickedEvent.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\files\FileManager.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\game\ManhuntConfiguration.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\game\ManhuntPlayerType.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\game\ManhuntPreGame.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\enums\GuiInventoryType.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\enums\GuiItemType.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\factories\GuiFactory.java
@@ -16,7 +20,10 @@ C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\GuiI
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\GuiItemHead.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\GuiPageable.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\GuiPlayerHead.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntCreateGui.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntGui.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\create\CreateHunterItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\create\CreateSpeedrunnerItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\CreateManhuntItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\CurrentPageItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\FirstPageItem.java
@@ -24,6 +31,7 @@ C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\item
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\NextPageItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\PreviousPageItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\RefreshItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\ReturnItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\listeners\GenericManhuntListener.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\singletons\ExceptionHandler.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\singletons\Messages.java

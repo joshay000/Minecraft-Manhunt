@@ -1,10 +1,7 @@
-package me.manhunt.gui.items.manhunt;
+package me.manhunt.gui.items.manhunt.create;
 
-import me.manhunt.collections.GuiCollection;
-import me.manhunt.collections.ManhuntPreGameCollection;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
-import me.manhunt.gui.enums.GuiInventoryType;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
@@ -14,8 +11,8 @@ import org.bukkit.entity.Player;
 import java.awt.*;
 import java.util.List;
 
-public class CreateManhuntItem extends GuiItem {
-    public CreateManhuntItem(GuiInventory inventory) {
+public class CreateHunterItem extends GuiItem {
+    public CreateHunterItem(GuiInventory inventory) {
         super(inventory);
     }
 
@@ -26,24 +23,27 @@ public class CreateManhuntItem extends GuiItem {
 
     @Override
     public Material getMaterial() {
-        return Material.CRAFTING_TABLE;
+        return Material.NETHERITE_SWORD;
     }
 
     @Override
     public String getName() {
-        return ChatColor.AQUA + "Create New Manhunt";
+        return ChatColor.RED + "Hunter";
     }
 
     @Override
     public List<String> getLore() {
         return List.of(
-                ChatColor.WHITE + "Create a new manhunt game."
+                ChatColor.GOLD + "Sets you as one of the hunters",
+                ChatColor.GOLD + "for this Manhunt.",
+                ChatColor.RED + "This choice cannot be undone",
+                ChatColor.RED + "unless you disband the Manhunt."
         );
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(4, 2);
+        return new Point(5, 2);
     }
 
     @Override
@@ -57,15 +57,5 @@ public class CreateManhuntItem extends GuiItem {
 
             return;
         }
-
-        if (ManhuntPreGameCollection.getInstance().isPlayerWithinPreGame(player)) {
-            sendNotification("You are already in a pre-game Manhunt.");
-
-            return;
-        }
-
-        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.MANHUNT_CREATE_INVENTORY, player);
-
-        player.openInventory(gui.getInventory());
     }
 }
