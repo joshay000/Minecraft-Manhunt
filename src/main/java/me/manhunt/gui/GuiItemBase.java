@@ -8,6 +8,7 @@ import java.awt.*;
 import java.util.List;
 
 public interface GuiItemBase {
+    boolean hasClickPermissions(Player player);
     Material getMaterial();
     String getName();
     List<String> getLore();

@@ -11,4 +11,5 @@ public interface GuiInventoryBase {
     Inventory getInventory();
     List<GuiItemBase> getItems();
     Player getOwner();
+    void refresh(boolean hasPermission);
 }

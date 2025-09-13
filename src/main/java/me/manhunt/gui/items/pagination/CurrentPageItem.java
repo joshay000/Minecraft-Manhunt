@@ -21,6 +21,11 @@ public class CurrentPageItem extends GuiItem {
     }
 
     @Override
+    public boolean hasClickPermissions(Player player) {
+        return true;
+    }
+
+    @Override
     public Material getMaterial() {
         return Material.OAK_SIGN;
     }

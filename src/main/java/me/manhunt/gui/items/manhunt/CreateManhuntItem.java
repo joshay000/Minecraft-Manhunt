@@ -2,6 +2,8 @@ package me.manhunt.gui.items.manhunt;
 
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
+import me.manhunt.singletons.Messages;
+import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -12,6 +14,11 @@ import java.util.List;
 public class CreateManhuntItem extends GuiItem {
     public CreateManhuntItem(GuiInventory inventory) {
         super(inventory);
+    }
+
+    @Override
+    public boolean hasClickPermissions(Player player) {
+        return Permissions.MANHUNT_CREATE.hasPermission(player);
     }
 
     @Override
@@ -39,5 +46,13 @@ public class CreateManhuntItem extends GuiItem {
     @Override
     public void click(Player player) {
         playClick();
+
+        if (!hasClickPermissions(player)) {
+            sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
+
+            player.closeInventory();
+
+            return;
+        }
     }
 }

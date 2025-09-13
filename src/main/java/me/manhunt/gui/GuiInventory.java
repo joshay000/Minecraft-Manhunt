@@ -2,7 +2,10 @@ package me.manhunt.gui;
 
 import me.manhunt.gui.enums.GuiItemType;
 import me.manhunt.gui.factories.GuiFactory;
+import me.manhunt.singletons.Messages;
+import me.manhunt.singletons.SoundPlayer;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
@@ -53,26 +56,33 @@ public abstract class GuiInventory implements GuiInventoryBase, GuiInventoryPagi
         return currentPage > 0;
     }
 
-    public void refresh() {
+    @Override
+    public void refresh(boolean hasPermission) {
+        if (!hasPermission) {
+            sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
+
+            return;
+        }
+
         owner.openInventory(getInventory());
     }
 
     @Override
-    public void firstPage() {
+    public void firstPage(boolean hasPermission) {
         currentPage = 0;
 
-        refresh();
+        refresh(hasPermission);
     }
 
     @Override
-    public void lastPage() {
+    public void lastPage(boolean hasPermission) {
         currentPage = getTotalPages() - 1;
 
-        refresh();
+        refresh(hasPermission);
     }
 
     @Override
-    public void nextPage() {
+    public void nextPage(boolean hasPermission) {
         currentPage++;
 
         if (currentPage >= getTotalPages()) {
@@ -81,11 +91,11 @@ public abstract class GuiInventory implements GuiInventoryBase, GuiInventoryPagi
             return;
         }
 
-        refresh();
+        refresh(hasPermission);
     }
 
     @Override
-    public void previousPage() {
+    public void previousPage(boolean hasPermission) {
         currentPage--;
 
         if (currentPage < 0) {
@@ -94,7 +104,7 @@ public abstract class GuiInventory implements GuiInventoryBase, GuiInventoryPagi
             return;
         }
 
-        refresh();
+        refresh(hasPermission);
     }
 
     @Override
@@ -160,5 +170,25 @@ public abstract class GuiInventory implements GuiInventoryBase, GuiInventoryPagi
 
     public Player getOwner() {
         return owner;
+    }
+
+    protected void sendNotification(String message) {
+        sendNotification(owner, message);
+    }
+
+    protected void sendNotification(Player player, String message) {
+        player.sendMessage(ChatColor.RED + message);
+
+        SoundPlayer.getInstance().playNotification(player);
+    }
+
+    protected void sendSettingsUpdate(String message) {
+        sendSettingsUpdate(owner, message);
+    }
+
+    protected void sendSettingsUpdate(Player player, String message) {
+        player.sendMessage(ChatColor.RED + message);
+
+        SoundPlayer.getInstance().playSettingsUpdate(player);
     }
 }

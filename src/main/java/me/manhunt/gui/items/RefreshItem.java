@@ -1,4 +1,4 @@
-package me.manhunt.gui.items.pagination;
+package me.manhunt.gui.items;
 
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
@@ -11,9 +11,15 @@ import org.bukkit.entity.Player;
 import java.awt.*;
 import java.util.List;
 
-public class PreviousPageItem extends GuiItem {
-    public PreviousPageItem(GuiInventory inventory) {
+public class RefreshItem extends GuiItem {
+    private final int x;
+    private final int y;
+
+    public RefreshItem(GuiInventory inventory, int x, int y) {
         super(inventory);
+
+        this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -23,12 +29,12 @@ public class PreviousPageItem extends GuiItem {
 
     @Override
     public Material getMaterial() {
-        return Material.OAK_BUTTON;
+        return Material.ENDER_PEARL;
     }
 
     @Override
     public String getName() {
-        return ChatColor.GOLD + "Previous Page";
+        return ChatColor.GREEN + "Refresh Page";
     }
 
     @Override
@@ -38,7 +44,7 @@ public class PreviousPageItem extends GuiItem {
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(2, 4);
+        return new Point(x, y);
     }
 
     @Override
@@ -53,6 +59,6 @@ public class PreviousPageItem extends GuiItem {
             return;
         }
 
-        inventory.previousPage(hasClickPermissions(player));
+        inventory.refresh(hasClickPermissions(player));
     }
 }

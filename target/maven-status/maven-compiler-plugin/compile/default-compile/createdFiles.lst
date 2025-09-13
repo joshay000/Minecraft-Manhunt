@@ -5,8 +5,10 @@ me\manhunt\gui\items\pagination\FirstPageItem.class
 me\manhunt\singletons\TextMaker.class
 me\manhunt\gui\inventories\ManhuntGui.class
 me\manhunt\commands\CommandCollection.class
+me\manhunt\src\Permissions.class
 me\manhunt\singletons\ExceptionHandler.class
 me\manhunt\gui\GuiPageable.class
+me\manhunt\gui\items\RefreshItem.class
 me\manhunt\gui\GuiInventoryPaginationBase.class
 me\manhunt\commands\ManhuntCommand.class
 me\manhunt\gui\items\pagination\LastPageItem.class
