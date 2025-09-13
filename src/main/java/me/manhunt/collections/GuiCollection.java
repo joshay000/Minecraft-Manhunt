@@ -17,7 +17,11 @@ public final class GuiCollection {
         return SINGLETON;
     }
 
-    private final List<GuiInventory> inventories = new ArrayList<>();
+    private final List<GuiInventory> inventories;
+
+    private GuiCollection() {
+        inventories = new ArrayList<>();
+    }
 
     public GuiInventory add(GuiInventory gui) {
         if (gui.getOwner() != null)

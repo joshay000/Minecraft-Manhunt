@@ -1,6 +1,7 @@
 package me.manhunt.src;
 
 import me.manhunt.collections.GuiCollection;
+import me.manhunt.collections.ManhuntPreGameCollection;
 import me.manhunt.commands.CommandCollection;
 import me.manhunt.commands.ManhuntCommand;
 import me.manhunt.listeners.GenericManhuntListener;
@@ -45,6 +46,7 @@ public final class Manhunt extends JavaPlugin {
     @Override
     public void onDisable() {
         GuiCollection.getInstance().clear();
+        ManhuntPreGameCollection.getInstance().clear();
 
         this.getLogger().info("Disabled");
     }

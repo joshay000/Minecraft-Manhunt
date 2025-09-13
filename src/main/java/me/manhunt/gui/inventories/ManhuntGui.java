@@ -26,10 +26,8 @@ public class ManhuntGui extends GuiInventory {
 
     @Override
     public List<GuiItemBase> getItems() {
-        List<GuiItemBase> output = new ArrayList<>();
-
-        output.add(GuiFactory.makeItem(GuiItemType.CREATE_MANHUNT_ITEM, this));
-
-        return output;
+        return List.of(
+                GuiFactory.makeItem(GuiItemType.CREATE_MANHUNT_ITEM, this)
+        );
     }
 }
