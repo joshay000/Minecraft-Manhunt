@@ -13,9 +13,8 @@ import java.util.List;
 
 public final class Manhunt extends JavaPlugin {
     // TODO:
-    // Add the /manhunt (or /mh) command.
-    // Add a GUI to navigate through game creation.
-    // Add pagination for all available players.
+    // Add a GUI to navigate through game creation. (Template done!)
+    // Add pagination for all available players. (Template done!)
     // Add block feature (add ability to unblock).
     // Add invite feature to send to selected players where they can accept or reject.
     // Add assignability to hunter/speedrunner.
