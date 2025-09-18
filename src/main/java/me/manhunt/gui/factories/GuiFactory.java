@@ -10,6 +10,7 @@ import me.manhunt.gui.inventories.ManhuntMainGui;
 import me.manhunt.gui.items.manhunt.CreateManhuntItem;
 import me.manhunt.gui.items.manhunt.create.CreateHunterItem;
 import me.manhunt.gui.items.manhunt.create.CreateSpeedrunnerItem;
+import me.manhunt.gui.items.manhunt.main.*;
 import me.manhunt.gui.items.pagination.*;
 import org.bukkit.entity.Player;
 
@@ -35,6 +36,13 @@ public final class GuiFactory {
             case CREATE_MANHUNT_ITEM -> new CreateManhuntItem(inventory);
             case CREATE_ADD_SPEEDRUNNER_ITEM -> new CreateSpeedrunnerItem(inventory);
             case CREATE_ADD_HUNTER_ITEM -> new CreateHunterItem(inventory);
+            case MAIN_ROSTER_ITEM -> new RosterItem(inventory);
+            case MAIN_WORLD_ITEM -> new WorldItem(inventory);
+            case MAIN_GAME_ITEM -> new GameItem(inventory);
+            case MAIN_GOAL_ITEM -> new GoalItem(inventory);
+            case MAIN_SPEEDRUNNER_ITEM -> new SpeedrunnerItem(inventory);
+            case MAIN_HUNTER_ITEM -> new HunterItem(inventory);
+            case MAIN_DISBAND_ITEM -> new DisbandItem(inventory);
             default -> throw new RuntimeException("The item type provided is not valid or is not implemented yet.");
         };
     }

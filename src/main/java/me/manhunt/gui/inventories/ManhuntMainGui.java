@@ -2,6 +2,8 @@ package me.manhunt.gui.inventories;
 
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItemBase;
+import me.manhunt.gui.enums.GuiItemType;
+import me.manhunt.gui.factories.GuiFactory;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -24,6 +26,14 @@ public class ManhuntMainGui extends GuiInventory {
 
     @Override
     public List<GuiItemBase> getItems() {
-        return new ArrayList<>();
+        return List.of(
+                GuiFactory.makeItem(GuiItemType.MAIN_ROSTER_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_WORLD_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_GAME_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_GOAL_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_SPEEDRUNNER_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_HUNTER_ITEM, this),
+                GuiFactory.makeItem(GuiItemType.MAIN_DISBAND_ITEM, this)
+        );
     }
 }

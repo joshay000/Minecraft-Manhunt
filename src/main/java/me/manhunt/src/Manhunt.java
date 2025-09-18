@@ -18,11 +18,9 @@ public final class Manhunt extends JavaPlugin {
     // Add pagination for all available players. (Template done!)
     // Add block feature (add ability to unblock).
     // Add invite feature to send to selected players where they can accept or reject.
-    // Add assignability to hunter/speedrunner.
-    // Allow multiple speedrunners and hunters.
+    // Add assignability to hunter/speedrunner. (Done with initial player!)
     // Require minimum of 1 speedrunner.
     // Allow game to begin if there are only speedrunners; just a chill day.
-    // Allow only 1 game per player to be the owner of.
     // Spawn at 0, 0 (highest Y) OR at their bed spawn point.
     // If all speedrunners die, end game (hunter[s] win).
     // If goal is acheived, end game (speedrunner[s] win).

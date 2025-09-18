@@ -1,6 +1,5 @@
 package me.manhunt.singletons;
 
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 
 public final class Messages {
@@ -13,4 +12,5 @@ public final class Messages {
     public static final String INVITE_ACCEPTED = ChatColor.GOLD + " has accepted your Manhunt invitation.";
     public static final String LEADER_DISBAND_PRE_GAME = ChatColor.RED + " has disbanded the Manhunt.";
     public static final String PLAYER_LEFT_PRE_GAME = ChatColor.RED + " has left the Manhunt.";
+    public static final String PLAYER_NOT_LEADER = ChatColor.RED + "You cannot perform this action as you are not the Manhunt leader.";
 }
