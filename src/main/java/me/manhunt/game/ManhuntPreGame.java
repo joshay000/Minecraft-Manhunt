@@ -183,6 +183,15 @@ public class ManhuntPreGame {
         return hunters;
     }
 
+    public List<Player> getPlayers() {
+        List<Player> output = new ArrayList<>();
+
+        output.addAll(speedrunners);
+        output.addAll(hunters);
+
+        return output;
+    }
+
     public Map<Player, ManhuntPlayerType> getInvites() {
         return invites;
     }

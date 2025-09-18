@@ -1,7 +1,12 @@
 package me.manhunt.gui.items.manhunt.create;
 
+import me.manhunt.collections.GuiCollection;
+import me.manhunt.collections.ManhuntPreGameCollection;
+import me.manhunt.game.ManhuntPreGame;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
+import me.manhunt.gui.enums.GuiInventoryType;
+import me.manhunt.gui.factories.GuiFactory;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
@@ -57,5 +62,23 @@ public class CreateSpeedrunnerItem extends GuiItem {
 
             return;
         }
+
+        if (ManhuntPreGameCollection.getInstance().doesPlayerHaveInvite(player)) {
+            sendNotification(Messages.UNABLE_TO_CREATE_MANHUNT);
+
+            player.closeInventory();
+
+            return;
+        }
+
+        ManhuntPreGame game = ManhuntPreGameCollection.getInstance().start(player);
+
+        game.addSpeedrunner(player);
+
+        sendSettingsUpdate(Messages.CREATED_MANHUNT_AS_SPEEDRUNNER);
+
+        GuiInventory gui = GuiCollection.getInstance().add(GuiFactory.makeGui(GuiInventoryType.MANHUNT_MAIN_INVENTORY, player));
+
+        player.openInventory(gui.getInventory());
     }
 }

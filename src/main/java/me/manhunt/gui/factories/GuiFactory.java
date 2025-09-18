@@ -6,6 +6,7 @@ import me.manhunt.gui.enums.GuiInventoryType;
 import me.manhunt.gui.enums.GuiItemType;
 import me.manhunt.gui.inventories.ManhuntCreateGui;
 import me.manhunt.gui.inventories.ManhuntGui;
+import me.manhunt.gui.inventories.ManhuntMainGui;
 import me.manhunt.gui.items.manhunt.CreateManhuntItem;
 import me.manhunt.gui.items.manhunt.create.CreateHunterItem;
 import me.manhunt.gui.items.manhunt.create.CreateSpeedrunnerItem;
@@ -19,6 +20,7 @@ public final class GuiFactory {
         return switch (type) {
             case MANHUNT_INVENTORY -> new ManhuntGui(owner);
             case MANHUNT_CREATE_INVENTORY -> new ManhuntCreateGui(owner);
+            case MANHUNT_MAIN_INVENTORY -> new ManhuntMainGui(owner);
             default -> throw new RuntimeException("The inventory type provided is not valid or is not implemented yet.");
         };
     }
