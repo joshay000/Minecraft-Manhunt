@@ -1,10 +1,9 @@
-package me.manhunt.gui.items.manhunt.main;
+package me.manhunt.gui.items.manhunt.world;
 
-import me.manhunt.collections.GuiCollection;
+import me.manhunt.collections.ManhuntPreGameCollection;
+import me.manhunt.game.ManhuntConfiguration;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
-import me.manhunt.gui.enums.GuiInventoryType;
-import me.manhunt.gui.factories.GuiFactory;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
@@ -14,8 +13,8 @@ import org.bukkit.entity.Player;
 import java.awt.*;
 import java.util.List;
 
-public class WorldItem extends GuiItem {
-    public WorldItem(GuiInventory inventory) {
+public class GameRuleItem extends GuiItem {
+    public GameRuleItem(GuiInventory inventory) {
         super(inventory);
     }
 
@@ -26,25 +25,25 @@ public class WorldItem extends GuiItem {
 
     @Override
     public Material getMaterial() {
-        return Material.HEART_OF_THE_SEA;
+        return Material.LECTERN;
     }
 
     @Override
     public String getName() {
-        return ChatColor.BLUE + "World Settings";
+        return ChatColor.AQUA + "Rules";
     }
 
     @Override
     public List<String> getLore() {
         return List.of(
-                ChatColor.GOLD + "Set the environment and generation",
-                ChatColor.GOLD + "settings of the Manhunt world."
+                ChatColor.GOLD + "Choose the game rules of the world",
+                ChatColor.GOLD + "to play Manhunt in."
         );
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(2, 2);
+        return new Point(6, 2);
     }
 
     @Override
@@ -54,11 +53,9 @@ public class WorldItem extends GuiItem {
         if (!hasClickPermissions(player)) {
             sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
 
+            player.closeInventory();
+
             return;
         }
-
-        GuiInventory gui = GuiCollection.getInstance().add(GuiFactory.makeGui(GuiInventoryType.MANHUNT_WORLD_SETTINGS_INVENTORY, player));
-
-        player.openInventory(gui.getInventory());
     }
 }

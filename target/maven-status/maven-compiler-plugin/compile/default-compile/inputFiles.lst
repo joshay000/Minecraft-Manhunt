@@ -23,6 +23,7 @@ C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\GuiP
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntCreateGui.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntGui.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntMainGui.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\inventories\ManhuntWorldSettingsGui.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\create\CreateHunterItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\create\CreateSpeedrunnerItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\CreateManhuntItem.java
@@ -33,6 +34,11 @@ C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\item
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\main\RosterItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\main\SpeedrunnerItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\main\WorldItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\world\DifficultyItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\world\GameRuleItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\world\GenerateStructuresItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\world\SeedItem.java
+C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\manhunt\world\WorldTypeItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\CurrentPageItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\FirstPageItem.java
 C:\Users\Joshua Diemer\IdeaProjects\Manhunt v2\src\main\java\me\manhunt\gui\items\pagination\LastPageItem.java

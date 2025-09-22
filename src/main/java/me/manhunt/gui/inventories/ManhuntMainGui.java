@@ -26,6 +26,8 @@ public class ManhuntMainGui extends GuiInventory {
 
     @Override
     public List<GuiItemBase> getItems() {
+        // TODO: Add variation between manhunt leader and invited player.
+
         return List.of(
                 GuiFactory.makeItem(GuiItemType.MAIN_ROSTER_ITEM, this),
                 GuiFactory.makeItem(GuiItemType.MAIN_WORLD_ITEM, this),
