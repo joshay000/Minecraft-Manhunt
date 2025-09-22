@@ -1,9 +1,12 @@
 package me.manhunt.gui.items.manhunt.world;
 
+import me.manhunt.collections.GuiCollection;
 import me.manhunt.collections.ManhuntPreGameCollection;
 import me.manhunt.game.ManhuntConfiguration;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
+import me.manhunt.gui.enums.GuiInventoryType;
+import me.manhunt.gui.factories.GuiFactory;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
@@ -70,9 +73,11 @@ public class WorldTypeItem extends GuiItem {
         if (!hasClickPermissions(player)) {
             sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
 
-            player.closeInventory();
-
             return;
         }
+
+        GuiInventory gui = GuiCollection.getInstance().add(GuiFactory.makeGui(GuiInventoryType.MANHUNT_WORLD_TYPE_INVENTORY, player));
+
+        player.openInventory(gui.getInventory());
     }
 }

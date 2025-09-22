@@ -1,4 +1,4 @@
-package me.manhunt.gui.items.manhunt.world;
+package me.manhunt.gui.items.manhunt.world.type;
 
 import me.manhunt.collections.GuiCollection;
 import me.manhunt.collections.ManhuntPreGameCollection;
@@ -6,21 +6,20 @@ import me.manhunt.game.ManhuntConfiguration;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
 import me.manhunt.gui.enums.GuiInventoryType;
-import me.manhunt.gui.factories.GuiFactory;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
-import org.bukkit.Difficulty;
 import org.bukkit.Material;
+import org.bukkit.WorldType;
 import org.bukkit.entity.Player;
 
 import java.awt.*;
 import java.util.List;
 
-public class DifficultyItem extends GuiItem {
+public class WorldTypeFlatItem extends GuiItem {
     private final ManhuntConfiguration game;
 
-    public DifficultyItem(GuiInventory inventory) {
+    public WorldTypeFlatItem(GuiInventory inventory) {
         super(inventory);
 
         game = ManhuntPreGameCollection.getInstance().getPlayerGameLeading(inventory.getOwner()).getConfiguration();
@@ -33,36 +32,28 @@ public class DifficultyItem extends GuiItem {
 
     @Override
     public Material getMaterial() {
-        return Material.IRON_SWORD;
+        return Material.GRASS_BLOCK;
     }
 
     @Override
     public String getName() {
-        Difficulty difficulty = game.getWorldSettings().getDifficulty();
-
-        String output;
-
-        switch (difficulty) {
-            case PEACEFUL -> output = "Peaceful";
-            case HARD -> output = "Hard";
-            case EASY -> output = "Easy";
-            default -> output = "Normal";
-        }
-
-        return ChatColor.RED + "Difficulty " + ChatColor.WHITE + "(" + output + ")";
+        return ChatColor.GREEN + "Superflat";
     }
 
     @Override
     public List<String> getLore() {
         return List.of(
-                ChatColor.GOLD + "Choose the world difficulty",
-                ChatColor.GOLD + "to play Manhunt in."
+                ChatColor.GOLD + "Presents the world as a superflat",
+                ChatColor.GOLD + "world type.",
+                ChatColor.RED + "WARNING: No strongholds will appear in",
+                ChatColor.RED + "the overworld with this world type.",
+                ChatColor.RED + "Be sure to update the end goal."
         );
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(5, 2);
+        return new Point(5, 1);
     }
 
     @Override
@@ -72,12 +63,14 @@ public class DifficultyItem extends GuiItem {
         if (!hasClickPermissions(player)) {
             sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
 
-            player.closeInventory();
-
             return;
         }
 
-        GuiInventory gui = GuiCollection.getInstance().add(GuiFactory.makeGui(GuiInventoryType.MANHUNT_WORLD_DIFFICULTY_INVENTORY, player));
+        sendSettingsUpdate(Messages.WORLD_SETTINGS_UPDATED);
+
+        game.getWorldSettings().setWorldType(WorldType.FLAT);
+
+        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.MANHUNT_WORLD_SETTINGS_INVENTORY, player);
 
         player.openInventory(gui.getInventory());
     }

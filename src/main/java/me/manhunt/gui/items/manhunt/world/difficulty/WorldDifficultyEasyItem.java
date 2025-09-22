@@ -1,4 +1,4 @@
-package me.manhunt.gui.items.manhunt.world;
+package me.manhunt.gui.items.manhunt.world.difficulty;
 
 import me.manhunt.collections.GuiCollection;
 import me.manhunt.collections.ManhuntPreGameCollection;
@@ -6,7 +6,6 @@ import me.manhunt.game.ManhuntConfiguration;
 import me.manhunt.gui.GuiInventory;
 import me.manhunt.gui.GuiItem;
 import me.manhunt.gui.enums.GuiInventoryType;
-import me.manhunt.gui.factories.GuiFactory;
 import me.manhunt.singletons.Messages;
 import me.manhunt.src.Permissions;
 import org.bukkit.ChatColor;
@@ -17,10 +16,10 @@ import org.bukkit.entity.Player;
 import java.awt.*;
 import java.util.List;
 
-public class DifficultyItem extends GuiItem {
+public class WorldDifficultyEasyItem extends GuiItem {
     private final ManhuntConfiguration game;
 
-    public DifficultyItem(GuiInventory inventory) {
+    public WorldDifficultyEasyItem(GuiInventory inventory) {
         super(inventory);
 
         game = ManhuntPreGameCollection.getInstance().getPlayerGameLeading(inventory.getOwner()).getConfiguration();
@@ -38,31 +37,20 @@ public class DifficultyItem extends GuiItem {
 
     @Override
     public String getName() {
-        Difficulty difficulty = game.getWorldSettings().getDifficulty();
-
-        String output;
-
-        switch (difficulty) {
-            case PEACEFUL -> output = "Peaceful";
-            case HARD -> output = "Hard";
-            case EASY -> output = "Easy";
-            default -> output = "Normal";
-        }
-
-        return ChatColor.RED + "Difficulty " + ChatColor.WHITE + "(" + output + ")";
+        return ChatColor.AQUA + "Easy";
     }
 
     @Override
     public List<String> getLore() {
         return List.of(
-                ChatColor.GOLD + "Choose the world difficulty",
-                ChatColor.GOLD + "to play Manhunt in."
+                ChatColor.GOLD + "Presents an easy world to",
+                ChatColor.GOLD + "play Manhunt in."
         );
     }
 
     @Override
     public Point getInventoryLocation() {
-        return new Point(5, 2);
+        return new Point(5, 1);
     }
 
     @Override
@@ -72,12 +60,14 @@ public class DifficultyItem extends GuiItem {
         if (!hasClickPermissions(player)) {
             sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
 
-            player.closeInventory();
-
             return;
         }
 
-        GuiInventory gui = GuiCollection.getInstance().add(GuiFactory.makeGui(GuiInventoryType.MANHUNT_WORLD_DIFFICULTY_INVENTORY, player));
+        sendSettingsUpdate(Messages.WORLD_SETTINGS_UPDATED);
+
+        game.getWorldSettings().setDifficulty(Difficulty.EASY);
+
+        GuiInventory gui = GuiCollection.getInstance().add(GuiInventoryType.MANHUNT_WORLD_SETTINGS_INVENTORY, player);
 
         player.openInventory(gui.getInventory());
     }

@@ -13,4 +13,5 @@ public final class Messages {
     public static final String LEADER_DISBAND_PRE_GAME = ChatColor.RED + " has disbanded the Manhunt.";
     public static final String PLAYER_LEFT_PRE_GAME = ChatColor.RED + " has left the Manhunt.";
     public static final String PLAYER_NOT_LEADER = ChatColor.RED + "You cannot perform this action as you are not the Manhunt leader.";
+    public static final String WORLD_SETTINGS_UPDATED = ChatColor.GOLD + "The world settings have been updated.";
 }

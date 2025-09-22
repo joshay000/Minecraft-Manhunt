@@ -61,9 +61,13 @@ public class GenerateStructuresItem extends GuiItem {
         if (!hasClickPermissions(player)) {
             sendNotification(Messages.INSUFFICIENT_PERMISSIONS);
 
-            player.closeInventory();
-
             return;
         }
+
+        sendSettingsUpdate(Messages.WORLD_SETTINGS_UPDATED);
+
+        game.getWorldSettings().setGenerateStructures(!game.getWorldSettings().hasGenerateStructures());
+
+        inventory.refresh(hasClickPermissions(player));
     }
 }
